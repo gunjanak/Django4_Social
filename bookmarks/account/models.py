@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils.text import slugify
 
 
 # Create your models here.
@@ -11,3 +12,4 @@ class Profile(models.Model):
     
     def __str__(self):
         return f"Profile of {self.user.username}"
+    
