@@ -103,6 +103,9 @@ def user_list(request):
 @login_required
 def user_detail(request,username):
     user = get_list_or_404(User,username=username,is_active=True)
-    return render(request,'account/user/detail.html',{'section':'people','user':user})
+    print(user[0])
+    print(user[0].get_full_name())
+    print(user[0].followers.count()) 
+    return render(request,'account/user/detail.html',{'section':'people','user':user[0]})
 
 
